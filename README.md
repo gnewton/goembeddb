@@ -2,12 +2,19 @@
 TLDR; a MWE embedding a key-value store file of 20M k/v pairs (1.9GB)
 into a Go binary and using the db from the binary.
 
+The same Go program that writes the db then is recompiled to embed the db.
 
-# 
-## Discussion on Google Groups golang-nuts
-https://groups.google.com/g/golang-nuts/c/jFKGLbTv2XQ
+Then the same Go program is used to read the db.
+
+
 
 ## How does it work?
+### Constant database
+The [constanct DB](https://en.wikipedia.org/wiki/Cdb_(software)) or cdb, is a write-once, static key-value store that stores its content in a [single file](http://cr.yp.to/cdb.html).
+
+### cdb: Go implementation
+A Go implementation of cdb is used: [github.com/alldroll/cdb](https://github.com/alldroll/cdb)
+
 Checkout the repo and type:
 ```
  $ make clean; make
@@ -36,14 +43,8 @@ Max resident=2248 Elapsed real=0:00.00 PageFaults=213 KCPU=0.00 UCPU=0.00 Elapse
 ```
    
 
-## Constant database
-The [constanct DB](https://en.wikipedia.org/wiki/Cdb_(software)) or cdb, is a write-once, static key-value store that stores its content in a [single file](http://cr.yp.to/cdb.html).
 
-
-### cdb: Go implementation
-A Go implementation of cdb is used: [github.com/alldroll/cdb](https://github.com/alldroll/cdb)
-
-#Example run
+# Example run
 
 ```
 $make; make clean
@@ -100,3 +101,11 @@ Max resident=1939820 Elapsed real=0:20.71 PageFaults=51214 KCPU=0.74 UCPU=21.59 
 Runtime 133.166µs
 Max resident=2244 Elapsed real=0:00.00 PageFaults=213 KCPU=0.00 UCPU=0.00 Elapsed=0.00
 $
+```
+
+# Observations
+
+
+
+# Discussion on Google Groups golang-nuts
+https://groups.google.com/g/golang-nuts/c/jFKGLbTv2XQ
