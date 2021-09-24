@@ -125,7 +125,7 @@ $
 ```
 
 # System
-Old Dell Optiplex mini-tower with 16GB RAM, 500GB disk. Intel i5-3570@3.40GHz.
+Old Dell Optiplex 7010 (circa 2015) mini-tower with 16GB RAM, 500GB disk. Intel i5-3570@3.40GHz.
 Kubuntu 20.10.
 
 ```
