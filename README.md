@@ -26,7 +26,7 @@ This does the following:
 
 1. Creates an empty cdb database file `test.cdb` (using `touch`).
 2. Go build compiles `main.go`, which embeds the empty `test.cdb` resulting in the Go binary `goembeddb` which is 2.1MB in size.
-3. `goembeddb` is run, which creates a real cdb database, with 20 million k/v pairs, resulting in a 1.9BG `test.cdb` file. The keys are 3-11 bytes in size, the values are 58-65 butes in size.
+3. `goembeddb` is run, which creates a real cdb database, with 20 million k/v pairs, resulting in a 1.9BG `test.cdb` file. The keys are 3-11 bytes in size, the values are 58-65 bytes in size.
 4. Go build re-compiles `main.go`, which embeds the 1.9GB `test.cdb` resulting in the Go binary `goembeddb` which is now 1.9GB in size.
 5. `goembeddb` is run, in sequential read-mode, reading all 20M values by keys, in key write order.
 ```
@@ -130,6 +130,7 @@ Kubuntu 20.10.
 
 ```
 Linux OptiPlex-7010 5.8.0-63-generic #71-Ubuntu SMP Tue Jul 13 15:59:12 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux
+go version go1.17.1 linux/amd64
 ```
 
 # Discussion on Google Groups golang-nuts
