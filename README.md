@@ -10,7 +10,7 @@ Then the same Go program is used to read the embedded db.
 
 
 ## Constant database
-For this MWE I am using the [constant DB](https://en.wikipedia.org/wiki/Cdb_(software)) or cdb, is a write-once, static key-value store that stores its content in a [single file](http://cr.yp.to/cdb.html).
+For this MWE I am using the [constant DB](https://en.wikipedia.org/wiki/Cdb_(software)) or cdb, which is a write-once, static key-value store that stores its content in a [single file](http://cr.yp.to/cdb.html).
 
 ### cdb: Go implementation
 A Go implementation of cdb is used: [github.com/alldroll/cdb](https://github.com/alldroll/cdb)
