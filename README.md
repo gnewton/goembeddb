@@ -111,7 +111,7 @@ $
 3. The size of the resultant `goembeddb` is ~1.9GB.
 4. Read all sequential: takes ~14s, 1939076k resident (~1.9GB). About 1.5M record reads / second.
 5. Read 20M random: takes ~21s, 1939820k resident (~1.9GB). About 1.5M record reads / second.
-6. **Read 1 record, random: takes 115.46µs, 2248k (~2.3MB) resident.**
+6. **Read 1 record, random: takes 115.46µs, 2248k (~2.3MB) resident. About 8700 record reads / second.**
 
 # Valgrind
 valgrind does not appear to like these Go binaries:
