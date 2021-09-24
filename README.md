@@ -6,6 +6,8 @@ The same Go program that writes the db then is recompiled, embedding the db in t
 
 Then the same Go program is used to read the embedded db.
 
+**To read 1 random record from the embedded 1.9GB 20 million record key-value db, takes 133.166µs, 2244k (~2.2MB) resident.**
+
 
 ## Constant database
 For this MWE I am using the [constanct DB](https://en.wikipedia.org/wiki/Cdb_(software)) or cdb, is a write-once, static key-value store that stores its content in a [single file](http://cr.yp.to/cdb.html).
