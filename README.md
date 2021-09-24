@@ -113,8 +113,8 @@ $
 5. Read 20M random: takes ~21s, 1939820k resident (~1.9GB). About 950K record reads / second.
 6. **Read 1 record, random: takes 115.46µs, 2248k (~2.3MB) resident. About 8700 record reads / second.**
 
-# Valgrind
-valgrind does not appear to like these Go binaries:
+# Valgrind issue
+[https://www.valgrind.org/](Valgrind) does not appear to like these Go binaries:
 ```
 $ valgrind --version
 valgrind-3.16.1
