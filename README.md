@@ -106,13 +106,31 @@ $
 ```
 
 # Observations
-1. `goembeddb` takes 90s to write 20M k/v. This is about 217k record writes / second.
+1. `goembeddb` takes ~91s to write 20M k/v. This is about 217k record writes / second.
 2. The compilation of `goembeddb` with the embedded 1.9GB cdb file takes ~22s.
 3. The size of the resultant `goembeddb` is ~1.9GB.
-4. Read all sequential: takes ~13s, 1939076k resident (~1.9GB). About 1.5M record reads / second.
+4. Read all sequential: takes ~14s, 1939076k resident (~1.9GB). About 1.5M record reads / second.
 5. Read 20M random: takes ~21s, 1939820k resident (~1.9GB). About 1.5M record reads / second.
-6. Read 1 record, random: takes 133.166µs, 2244k (~2.2MB) resident.
+6. **Read 1 record, random: takes 115.46µs, 2248k (~2.3MB) resident.**
 
+# Valgrind
+valgrind does not appear to like these Go binaries:
+```
+$ valgrind --version
+valgrind-3.16.1
+$ valgrind ./goembeddb -S -q
+valgrind: mmap(0x54e000, 1977884672) failed in UME with error 22 (Invalid argument).
+valgrind: this can be caused by executables with very large text, data or bss segments.
+$ 
+```
+
+# System
+Old Dell Optiplex mini-tower with 16GB RAM, 500GB disk. Intel i5-3570@3.40GHz.
+Kubuntu 20.10.
+
+```
+Linux OptiPlex-7010 5.8.0-63-generic #71-Ubuntu SMP Tue Jul 13 15:59:12 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux
+```
 
 # Discussion on Google Groups golang-nuts
 https://groups.google.com/g/golang-nuts/c/jFKGLbTv2XQ
