@@ -1,12 +1,12 @@
 # goembeddb
-TLDR; a MWE embedding a key-value store file of 20M k/v pairs (1.9GB)
+TLDR; a MWE embedding a key-value store file of 20 million k/v pairs (1.9GB)
 into a Go binary and using the db from the binary.
 
 The same Go program that writes the db then is recompiled, embedding the db in the newly compiled Go binary.
 
 Then the same Go program is used to read the embedded db.
 
-**To read 1 random record from the embedded 1.9GB 20 million record key-value db, takes 133.166µs, 2244k (~2.2MB) resident.**
+**To read 1 random record from the embedded 1.9GB 20 million record key-value db, takes 133.166µs, 2244k (~2.2MB) resident. Cold start.**
 
 
 ## Constant database
